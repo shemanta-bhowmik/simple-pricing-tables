@@ -1,0 +1,83 @@
+.all-simple-pricing-tables{
+    width: 1080px;
+    margin: auto;
+    margin: 60px 0;
+    overflow: hidden;
+}
+
+.all-simple-pricing-tables h3 {
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 25px;
+    letter-spacing: 3px;
+}
+
+.all-simple-pricing-tables p {
+    margin: 5px 0 0;
+}
+
+.all-simple-pricing-tables .simple-pricing-table {
+    text-align: center;
+    width: 30%;
+    margin-right: 4%;
+    float: left;
+    box-shadow: 0px 0px 40px -25px rgb(0 0 0 / 50%);
+    border-radius: 6px;
+}
+
+.all-simple-pricing-tables .simple-pricing-table:last-child {
+    margin-right: 0;
+}
+
+.all-simple-pricing-tables .simple-pricing-table .pricing-titles {
+    background: #3498db;
+    color: #ffffff;
+    padding: 20px;
+    border: 1px solid #3498db;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+.all-simple-pricing-tables .simple-pricing-table .pricing-content {
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.all-simple-pricing-tables .simple-pricing-table ul {
+    margin: 0;
+    padding: 0;
+}
+
+.all-simple-pricing-tables .simple-pricing-table ul li {
+    list-style: none;
+    padding: 10px 0px;
+    border-bottom: .4px solid rgba(204, 204, 204, .4);
+}
+
+.all-simple-pricing-tables .simple-pricing-table i {
+    color: #2ecc71;
+    margin-right: 5px;
+}
+.all-simple-pricing-tables .simple-pricing-table .pricing-button {
+    box-shadow: 0px 0px 40px -25px rgb(0 0 0 / 50%);
+}
+.all-simple-pricing-tables .simple-pricing-table .pricing-button a {
+    color: #fff;
+    background: #3498db;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 15px 30px;
+    letter-spacing: 3px;
+    display: block;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+.all-simple-pricing-tables .simple-pricing-table .pricing-duration {
+    margin-bottom: 20px;
+}
+
+.all-simple-pricing-tables .simple-pricing-table .pricing-duration span {
+    font-size: 40px;
+    font-weight: bold;
+}

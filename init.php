@@ -23,6 +23,18 @@
         require_once( dirname( __FILE__ ) . '/metabox/custom.php' );
      }
 
+     /**
+      * Script and Style files
+      */
+      
+      function script_n_styles_func() {
+
+            wp_enqueue_style( 'custom-stylesheet', PLUGINS_URL( '/css/custom.css', __FILE__ ) );
+            wp_enqueue_style( 'font-awesome-cdn', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css' );
+
+      }
+      add_action( 'wp_enqueue_scripts', 'script_n_styles_func' );
+
     /**
      * Register a custom post type called "simple-pricing-tables".
      */
@@ -82,3 +94,92 @@
     }
     
     add_action( 'init', 'simple_pricing_tables_func' );
+
+    /**
+     * Design Part
+     * Adding Shortcode
+     */
+
+    function simple_pricing_tables_shortcode() {
+
+        ob_start(); ?>
+
+        <div class="all-simple-pricing-tables">
+            <div class="simple-pricing-table">
+                <div class="pricing-titles">
+                    <h3 class="pricing-title">Basic</h3>
+                    <p>This is basic packege</p>
+                </div>
+                <div class="pricing-content">
+                    <ul>
+                        <li><i class="fas fa-check-square"></i> Demo Pricing Titles Here</li>
+                        <li><i class="fas fa-check-square"></i> Demo Pricing Titles Here</li>
+                        <li><i class="fas fa-check-square"></i> Demo Pricing Titles Here</li>
+                        <li><i class="fas fa-check-square"></i> Demo Pricing Titles Here</li>
+                        <li><i class="fas fa-check-square"></i> Demo Pricing Titles Here</li>
+                        <li><i class="fas fa-check-square"></i> Demo Pricing Titles Here</li>
+                    </ul>
+                </div>
+                <div class="pricing-duration">
+                    <p>
+                        $<span>99</span>/month
+                    </p>
+                </div>
+                <div class="pricing-button">
+                    <a href="#">Get Now</a>
+                </div>
+            </div>
+            <div class="simple-pricing-table">
+                <div class="pricing-titles">
+                    <h3 class="pricing-title">Standard</h3>
+                    <p>This is standard packege</p>
+                </div>
+                <div class="pricing-content">
+                    <ul>
+                        <li><i class="fas fa-check-square"></i> Demo Pricing Titles Here</li>
+                        <li><i class="fas fa-check-square"></i> Demo Pricing Titles Here</li>
+                        <li><i class="fas fa-check-square"></i> Demo Pricing Titles Here</li>
+                        <li><i class="fas fa-check-square"></i> Demo Pricing Titles Here</li>
+                        <li><i class="fas fa-check-square"></i> Demo Pricing Titles Here</li>
+                        <li><i class="fas fa-check-square"></i> Demo Pricing Titles Here</li>
+                    </ul>
+                </div>
+                <div class="pricing-duration">
+                    <p>
+                        $<span>199</span>/month
+                    </p>
+                </div>
+                <div class="pricing-button">
+                    <a href="#">Get Now</a>
+                </div>
+            </div>
+            <div class="simple-pricing-table">
+                <div class="pricing-titles">
+                    <h3 class="pricing-title">Premium</h3>
+                    <p>This is premium packege</p>
+                </div>
+                <div class="pricing-content">
+                    <ul>
+                        <li><i class="fas fa-check-square"></i> Demo Pricing Titles Here</li>
+                        <li><i class="fas fa-check-square"></i> Demo Pricing Titles Here</li>
+                        <li><i class="fas fa-check-square"></i> Demo Pricing Titles Here</li>
+                        <li><i class="fas fa-check-square"></i> Demo Pricing Titles Here</li>
+                        <li><i class="fas fa-check-square"></i> Demo Pricing Titles Here</li>
+                        <li><i class="fas fa-check-square"></i> Demo Pricing Titles Here</li>
+                    </ul>
+                </div>
+                <div class="pricing-duration">
+                    <p>
+                        $<span>399</span>/month
+                    </p>
+                </div>
+                <div class="pricing-button">
+                    <a href="#">Get Now</a>
+                </div>
+            </div>
+        </div>
+
+    <?php return ob_get_clean();
+
+    }
+    add_shortcode( 'simple-pricing-tables-sc', 'simple_pricing_tables_shortcode' );
