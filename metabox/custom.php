@@ -19,9 +19,18 @@
 
         $cmb_demo = new_cmb2_box( array(
 
-            'id'            => 'simple-pricing-table-metabox',
+            'id'            => $prefix . 'pricing-table-metabox',
             'title'         => esc_html__( 'Simple Pricing Options', 'simple-pricing-tables-textdomain' ),
             'object_types'  => array( 'simple-pricing-table' ), // Post type
+
+        ) );
+
+        $cmb_demo->add_field( array(
+
+            'name'       => esc_html__( 'Title', 'cmb2' ),
+            'desc'       => esc_html__( 'Add a subtitle below pricing title', 'simple-pricing-tables-textdomain' ),
+            'id'         => $prefix . 'pricing_tables_field_title',
+            'type'       => 'text',
 
         ) );
 
@@ -59,10 +68,10 @@
             'desc'       => esc_html__( 'Add your pricing fields using list style below', 'simple-pricing-tables-textdomain' ),
             'id'         => $prefix . 'pricing_tables_field_duration',
             'type'       => 'select',
-            'default'    => 'opt_1',
+            'default'    => 'Year',
             'options'    => [
-                'opt_1'  => __( 'Month' ),
-                'opt_2'  => __( 'Year' ),
+                'Month'  => __( 'Month' ),
+                'Year'   => __( 'Year' ),
             ],
 
         ) );
